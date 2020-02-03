@@ -4,6 +4,12 @@ import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 
+# A TicTacToe game is a list of 9 distinct integer between 1 and 9.
+# The n-th number is interpreted as the n-th step in the game.
+# The eval function takes a TicTacToe game as an input and returns 
+#   1 if the first player wins, 
+#   -1 if the second player winds and 
+#   0 if neither!
 def eval(game):
     x = set([game[0], game[2], game[4], game[6], game[8]])
     o = set([game[1], game[3], game[5], game[7]])
@@ -28,6 +34,7 @@ def eval(game):
     else: 
         return 0
 
+# Returns a randon game.
 def randGame():
     l = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     game = [0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -39,6 +46,7 @@ def randGame():
             break
     #print(game)    
     return game
+
 
 def createRandomSteps(n):
     df = pd.DataFrame(columns = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6', 'step7', 'step8', 'step9', 'value'], index = range(9 * n), dtype = float)
